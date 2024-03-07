@@ -55,6 +55,12 @@ Dataset({
   num_rows: 6861
 })
 
+##QLora Config
+dtype_computation = getattr(torch, compute_dtype_bnb)
+bnb_setup = BitsandBytesConfig(load_in_4Bit = enable_4Bit,
+                               bnb_4Bit_quant_type = quant_type_bnb,
+                               bnb_4Bit_use_double_quant = double_quant_flag,
+                               bnb_4Bit_compute_dtype = dtpye_computation)
 
 
 
