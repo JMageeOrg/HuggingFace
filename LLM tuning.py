@@ -18,3 +18,10 @@ formatted_dataset = "aboonaji/wiki_medical_terms_llam2_format"
 lora_hyper_r = 64
 lora_hyper_alpha = 16
 lora_hyper_dropout  = 0.1
+
+##BitsandBytes Parameters
+enable_4Bit = True
+compute_dtype_bnb = "float16"
+quant_type_bnb = "nf4"
+double_quant_flag = False
+
