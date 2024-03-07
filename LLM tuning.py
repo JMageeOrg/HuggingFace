@@ -13,3 +13,8 @@ from transformers import (AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfi
 model_identfier = "aboonaji/wiki_medical_terms_llam2_format"
 source_dataset = "gamino/wiki_medical_terms"
 formatted_dataset = "aboonaji/wiki_medical_terms_llam2_format"
+
+##QlOra HyperParameters
+lora_hyper_r = 64
+lora_hyper_alpha = 16
+lora_hyper_dropout  = 0.1
