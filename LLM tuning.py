@@ -110,7 +110,8 @@ llama_sftt_trainer = SFTTrainer(model = llama_model,
                                 max_seq_length = sequence_length_max,
                                 packing = enable_packing)
 
-
+##Training the Model
+llama_sftt_trainer.train()
               
 
 
