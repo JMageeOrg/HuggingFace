@@ -25,3 +25,21 @@ compute_dtype_bnb = "float16"
 quant_type_bnb = "nf4"
 double_quant_flag = False
 
+###training arguments_hyperparameters
+results_dir = "./results"
+epochs_count = 10
+enable_fp16 = False
+enable_bf16 = False
+train_batch_size = 4
+eval_batch_size = 4
+accumulation_steps = 1
+checkpointing_flag = True
+grad_norm_limit = 0.3
+train~_learning_rate = 2e-4
+decay_rate = 0.001
+optimizer_type = "paged_adamw_32bit"
+scheduler_type ="cosine"
+steps_limit = 100
+warmup_percentage = 0.03
+
+
