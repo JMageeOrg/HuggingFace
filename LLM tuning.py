@@ -62,6 +62,12 @@ bnb_setup = BitsandBytesConfig(load_in_4Bit = enable_4Bit,
                                bnb_4Bit_use_double_quant = double_quant_flag,
                                bnb_4Bit_compute_dtype = dtpye_computation)
 
+##loading the llama models
+llama_model = AutoModelForCausalLM.from_pretrained(model_identfier, quantization_config = bnb_setup, device_map = device_assignment)
+llama_model.config.use_case = False
+llama_model.config.pretraining_tp = 1
+
+
 
 
 
