@@ -9,3 +9,7 @@ from datasets import load_dataset
 from peft import LoraConfig, PeftModel
 from transformers import (AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, HfArgumentParser, TrainingArguments, pipeline, logging)
 
+##Import the datesets
+model_identfier = "aboonaji/wiki_medical_terms_llam2_format"
+source_dataset = "gamino/wiki_medical_terms"
+formatted_dataset = "aboonaji/wiki_medical_terms_llam2_format"
