@@ -35,7 +35,7 @@ eval_batch_size = 4
 accumulation_steps = 1
 checkpointing_flag = True
 grad_norm_limit = 0.3
-train~_learning_rate = 2e-4
+train_learning_rate = 2e-4
 decay_rate = 0.001
 optimizer_type = "paged_adamw_32bit"
 scheduler_type ="cosine"
@@ -78,6 +78,28 @@ peft_setup = LoraConfig(lora_alpha = lora_hyper_alpha,
                         lora_r = lora_hyper_r,
                         bias = "none",
                         task_type = "CASUAL_LM")
+
+##Training Arguments
+train-args =TrainingArguments(output_dir = results_dir,
+                              num_train_epochs = epochs_count,
+                              per_device_train_batch_size = train_batch_size,
+                              per_device_eval_batch_size = teval_batch_size,
+                              gradient_accumulation_steps = accumulation_steps,
+                              learning_rate = train_learning_rate,
+                              weight_decay = decay_rate,
+                              optim = optimizer_type,
+                              save_steps = checkpoint_interval,
+                              logging_steps = log_interval, 
+                              fp16 = enable_fp16,
+                              bf1 = enable_bf1,
+                              max_grad_norm = grad-norm_limit,
+                              max_steps = steps_limit,
+                              warmup_ratio = warmup_percentage,
+                              group_by_lenght = lenght_grouping,
+                              lr_scheduler_type = scheduler_type,
+                              gradient_checkpointing = checkpointing_flag)
+
+
 
                         
               
