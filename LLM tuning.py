@@ -67,7 +67,10 @@ llama_model = AutoModelForCausalLM.from_pretrained(model_identfier, quantization
 llama_model.config.use_case = False
 llama_model.config.pretraining_tp = 1
 
-
+##Pretrained Tokenizer
+llama_tokenizer = tokenizer.from_pretrained(model_identfier, trust_remote_code = True)
+llama_tokenizer.pad_token = llama.tokenizer.eos_token
+llama_tokenizer.padding_side = "right"
 
 
 
