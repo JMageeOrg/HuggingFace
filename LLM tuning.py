@@ -42,4 +42,20 @@ scheduler_type ="cosine"
 steps_limit = 100
 warmup_percentage = 0.03
 
+##fine tuning Hyperparameters
+enable_packing = False
+sequence_lenght_max = None
+device_assignment = {"": 0}
+
+###loading the dataset
+training_data = load_dataset(formatted_dataset, split = "train")
+training_data
+Dataset({
+  features ['text],
+  num_rows: 6861
+})
+
+
+
+
 
