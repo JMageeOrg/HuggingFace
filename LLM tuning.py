@@ -72,5 +72,14 @@ llama_tokenizer = tokenizer.from_pretrained(model_identfier, trust_remote_code =
 llama_tokenizer.pad_token = llama.tokenizer.eos_token
 llama_tokenizer.padding_side = "right"
 
+##Lora Fine tuning
+peft_setup = LoraConfig(lora_alpha = lora_hyper_alpha,
+                        lora_dropout = lora_hyper_dropout,
+                        lora_r = lora_hyper_r,
+                        bias = "none",
+                        task_type = "CASUAL_LM")
+
+                        
+              
 
 
