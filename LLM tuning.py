@@ -100,8 +100,17 @@ train-args =TrainingArguments(output_dir = results_dir,
                               gradient_checkpointing = checkpointing_flag)
 
 
+##Supervised Fine Tuning
+llama_sftt_trainer = SFTTrainer(model = llama_model,
+                                args = train_args,
+                                training_dataset = training_data,
+                                tokenizer = llama_tokenizer,
+                                peft_config = peft_setup,
+                                dataset_text_field = "text"
+                                max_seq_length = sequence_length_max,
+                                packing = enable_packing)
 
-                        
+
               
 
 
